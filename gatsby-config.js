@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `rhiannanONLINE`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `RHIANNAN.ONLINE`,
+    description: `My personal site where I do personal things.`,
     author: `Rhiannan Berry`,
   },
   plugins: [
@@ -74,8 +74,8 @@ module.exports = {
         name: `RHIANNAN.ONLINE`,
         short_name: `RHIANNAN`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#aebcfe`,
+        theme_color: `#6a65ff`,
         display: `minimal-ui`,
         icon: `src/images/website-icon.png`, // This path is relative to the root of the site.
       },
