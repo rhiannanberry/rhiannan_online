@@ -1,0 +1,160 @@
+.pdf {
+    display: flex;
+    justify-content: center;
+    .pg {
+        width: 100%;
+        
+        .react-pdf__Page__svg, svg {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+}
+
+.con, .block {
+    background-color: $body-background-color;
+    border: $outline-color solid 4px;
+    padding: 0px 20px;
+    padding-bottom: 20px;
+    margin-bottom: 2em;
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+    
+
+    h2:first-of-type {
+        background-color: $outline-color;
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 3px 20px;
+        border-bottom: $outline-color solid 4px;
+    }
+    .inline-image {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        p, .gatsby-resp-image-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex: 1;
+            margin: 0;
+        }
+        p>img {
+            padding: 0px;
+            margin:0px;
+            width: 100%;
+        }
+    }
+    
+
+    .tag {
+        text-transform: capitalize;
+        display: inline-block;
+        padding: 2px 10px;
+        background-color: $red;
+        margin: 2px 10px;
+        margin-left: 0;
+
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+
+        &[id="0"] {background-color: $red;}
+        &[id="1"] {background-color: $orange;}
+        &[id="2"] {background-color: $yellow;}
+        &[id="3"] {background-color: $green;}
+        &[id="4"] {background-color: $blue;}
+        &[id="5"] {background-color: $purple;}
+
+    }
+}
+
+h1 {
+    //background-color: $headbar-color;
+    color:$outline-color;
+    //-webkit-background-clip: text;
+    //background-clip: text;
+    //display: inline-block;
+    //text-shadow: 4px -4px $title-color;
+}
+
+
+code {
+    font-family: 'Inconsolata', monospace; //Fantasque sans mono is a rly close second
+    letter-spacing: 0;
+}
+
+html, body { 
+    font-family: 'Balsamiq Sans';
+    letter-spacing: .02em;
+}
+
+u {
+    text-decoration-thickness: inherit;
+}
+
+strong {
+    text-decoration-thickness: 2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka One';
+    letter-spacing: .1em;
+    font-weight: normal;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    color: $title-color;
+}
+
+h1 {
+    font-weight: bold;
+
+    //color: $outline-color;
+}
+
+h2 {
+    color: white;
+}
+
+h5, h6 {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+h4, h6 {
+    font-style: italic;
+
+}
+
+main {
+    color: $text-color;
+    a{
+        color: red;
+        font-weight: bold;
+        text-decoration-line: underline;
+        text-decoration-style: dotted;
+        text-decoration-thickness: 2px;
+
+        &.footnote-ref, &.footnote-backref {
+            text-decoration-thickness: 1px;
+            color: blue;
+        }
+        transition: text-decoration-color .5s;
+        &:hover {
+            
+            text-decoration-style: wavy;
+            text-decoration-thickness: 1px;
+            text-decoration-color: red;
+        }
+    }
+}
+
+pre {
+    background-color: darken($body-background-color, 2);//darken($body-background-color, 2);
+}

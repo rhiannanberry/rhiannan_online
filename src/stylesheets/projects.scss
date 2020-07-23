@@ -1,0 +1,41 @@
+.projects {
+    .boxes {
+        position: relative;
+        top:0;
+        height: auto;
+        width: auto;
+        display: grid;
+        justify-content: space-between;
+        align-content: space-between;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+        .box-container {
+            position: relative;
+
+            &:before {
+                content: ' ';
+                display: block;
+                width: 100%;
+                padding-top: 100%
+            }
+
+        }
+
+        .headbar>.title {
+            font-size: 2rem;
+        }
+
+        @media only screen and (max-width: 700px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media only screen and (max-width: 400px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    
+   
+}
+

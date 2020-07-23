@@ -1,0 +1,131 @@
+
+.homepage {
+    
+
+    .aboutme {
+        position: relative;
+        top: -55px;
+        margin-left: 370px;
+        width: auto;
+        height: auto;
+        //min-height: 385px;
+
+        .container {
+            font-size: 18px;
+            padding: 20px;
+            padding-left: 100px;
+            letter-spacing: .1em;
+
+            a{
+                color: red;
+                font-weight: bold;
+                text-decoration-line: underline;
+                text-decoration-style: dotted;
+                text-decoration-thickness: 2px;
+        
+                &.footnote-ref, &.footnote-backref {
+                    text-decoration-thickness: 1px;
+                    color: blue;
+                }
+                transition: text-decoration-color .5s;
+                &:hover {
+                    
+                    text-decoration-style: wavy;
+                    text-decoration-thickness: 1px;
+                    text-decoration-color: red;
+                }
+            }
+        }
+    }
+
+    .boxes {
+        position: absolute;
+        top: 160px;
+        width: 450px;
+        height: 450px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: space-between;
+        align-content: start;
+        grid-gap: 30px;
+        @media only screen and (max-width: 960px) {
+            grid-gap: calc(100vw/32);
+        }
+
+        
+        .box-container {
+            position: relative;
+
+            &:before {
+                content: ' ';
+                display: block;
+                width: 100%;
+                padding-top: 100%
+            }
+        }
+
+        >.box {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+    @media only screen and (max-width: 900px) {
+        .aboutme {
+            .container {
+                font-size: 16px;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+           
+                .aboutme {
+                    top: 0;
+                    margin: 0px;
+                    .container {
+                        font-size: 16px;
+                        padding-left: 20px;
+                    }
+                }
+
+                .boxes {
+                    position: relative;
+                    margin-top: 20px;
+                    top: 0px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-gap: 20px;
+                    width: 100%;
+                    height: 100%;
+                
+                }
+            
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+      
+            .aboutme {
+                top: 0;
+                margin: 0px;
+                max-height: 500px;
+                .container {
+                    font-size: 16px;
+                    padding-left: 20px;
+                }
+            }
+            .boxes {
+                position: relative;
+                display: grid;
+                margin-top: 20px;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 20px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                
+            
+        }
+
+    }
+}

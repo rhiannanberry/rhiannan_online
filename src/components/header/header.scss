@@ -1,0 +1,108 @@
+header {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto 1.45rem auto;
+    padding: 0 20px 0 10px;
+    display: flex;
+    align-items: stretch;
+    transition: max-width 0.2s ease-out;
+    color: $outline-color;
+
+    .link {
+        font-family: 'Fredoka One', cursive;
+        font-size: 18px;
+        letter-spacing: .14em;
+        color: $outline-color;
+        text-decoration: none;
+
+        &#twitter, &#github {
+            transition: background-color .5s ease-out, color 1.5s ease-out;
+            &:hover {
+                transition: background-color 0.2s ease-out, color 0.2s ease-out;
+                color: white
+            }
+        }
+
+        &#twitter {
+            &:hover { background-color: #1da1f2; }
+            &:active { background-color: #657786; }
+        }
+        &#github {
+         
+            &:hover {
+                background-color: #6a737d;
+            }
+            &:active {
+                background-color: #444d56;
+            }
+        }
+
+        &.current {
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+        }
+
+        &:hover, &:focus {
+            color: $title-color;            
+        }
+    }
+
+    #title {
+        text-align: center;
+        font-family: 'CQ Mono', monospace;
+        font-size: 44px;
+        letter-spacing: .14em;
+        font-weight: bold;
+        display: inline-block;
+        line-height: 55px;
+        margin-left: 10px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+    .links {
+        margin-left: 18px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: space-between;
+    
+        .col {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    header {
+        transition: max-width 0.2s ease-out;
+        padding: 0 10px;
+        max-width: 100%;
+        #title {
+            letter-spacing: .1em;
+        }
+        .links {
+            margin-bottom: 9px;
+            margin-left: 0px;
+            align-items: end;
+            margin-right: 6px;
+            .link {
+                line-height: 20px;
+                font-size: 20px;
+            }
+        }
+
+        .col {
+            //flex-direction: column;
+            :nth-child(2) {
+                display:none;
+            }
+        }
+    }
+} 

@@ -1,0 +1,237 @@
+@import '../../stylesheets/variables.scss';
+
+a {
+    text-decoration: none;
+}
+
+.box {
+    a {
+        text-decoration: none;
+    }
+    color: $title-color;
+    text-decoration: none;
+    font-family: 'Balsamiq Sans';
+    background-color: $body-background-color;
+    border-style: solid;
+    border-width: 4px;
+    border-color: $outline-color;
+    max-height: 700px;
+    transition: max-height 0.2s ease-out;
+    //height: 100px;
+    //width: 100px;
+    position:relative;
+    overflow: hidden;
+
+    .headbar, .custom-block-heading {
+        font-family: 'Fredoka One', cursive;
+        font-size: 20px;
+        background-color: $outline-color;
+        display: flex;
+        width: 100%;
+        height: auto;
+        border-bottom-style: solid;
+        border-color: inherit;
+        border-width: inherit;
+        line-height: 28px;
+        padding: 0 6px;
+        letter-spacing: .14em;
+        user-select: none;
+        justify-content: space-between;
+        color: white;
+
+        z-index: 10;
+
+        .subtitle {
+            font-size: 14px;
+        }
+       
+    }
+
+    .container {
+        background-color: $body-background-color;
+        height:100%;
+       .gatsby-image-wrapper {
+           height:100%;
+       }
+    }
+
+    &.link { //for both small and large
+        transition: transform .75s, opacity .75s;
+
+        display: flex;
+        position: absolute;
+        overflow: visible;
+        border: none;
+        background-color: transparent;
+
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+
+        .shadow {
+            position: absolute;
+            top:3px;
+            bottom: -7px;
+            left:3px;
+            right:-7px;
+
+            opacity: 0.65;
+
+            @keyframes rainbow {
+                0% { background-color: $red; }
+                17% { background-color: $orange; }
+                33% { background-color: $yellow; }
+                50% { background-color: $green; }
+                67% { background-color: $blue; }
+                83% { background-color: $purple; }
+                100% { background-color: $red; }
+            }
+
+            background-color: $headbar-color;
+
+            animation: rainbow 2s linear infinite;
+
+            .shadoww {
+                background-color: $headbar-color;
+                height: 100%;
+                width: 100%;
+                transition: opacity .5s ease-out;
+                opacity: 1;
+            }
+        }
+
+        .borders {
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left:0;
+            right:0;
+            background-color: $outline-color;
+            transition: background-color .75s;
+        }
+
+        .headbar, .container {
+            position: absolute;
+
+            top: 4px;
+            bottom: 4px;
+            left: 4px;
+            right: 4px;
+            width: auto;
+        }
+
+        .headbar {
+            justify-content: center;
+            align-items: center;
+
+            padding: 0;
+            border: none;
+            z-index: 0;
+
+            background-color: $body-background-color;
+
+            .title {
+                font-size: 22px;
+                position: relative;
+                width: auto;
+                max-width: 90%;
+                padding: 0;
+                text-align: center;
+                font-family: 'Fredoka One';
+                letter-spacing: 1px;
+                //color: $title-color;
+            }
+        }
+
+        .container {
+            height: auto;
+            transition: opacity .5s;
+            .gatsby-image-wrapper {
+                pointer-events: none;
+            }
+        }
+
+        &:hover, &:focus {
+            cursor: pointer;
+            transition: transform .75s, opacity .75s;
+            transform: rotate(3deg);
+            .shadoww {
+                transition: opacity .5s ease-out;
+                opacity: 0;
+            }
+
+            &:not(.article) {
+                .container {
+                    opacity: 0.1;
+                }
+                .borders { background-color: $title-color;}
+            }
+        }
+
+        &.article {
+            position: relative;
+            flex-direction: column;
+            padding:4px;
+            .headbar {
+                justify-content: space-between;
+                padding: 0 6px;
+
+                border-bottom: solid 4px $outline-color;
+                background-color: $outline-color;
+                .title {text-align: left;}
+            }
+            .headbar, .container {
+                position: initial;
+                z-index: 10;
+            }
+            .container {
+                padding:10px;
+                p:last-of-type {
+                    margin-bottom: 0;
+                    font-size:16px;
+                    line-height: 22px;
+                }
+            }
+        }
+
+        &.small, &.image {
+            .headbar { color: $title-color; }
+        }
+    }
+    
+    &.collapsible {
+        .headbar, .custom-block-heading {
+            justify-content: start;
+            height: 30px;
+
+            &:hover { cursor: pointer; }
+            &::before {
+                transition: transform 0.2s ease-out;
+            //padding-left: 5px;
+            transform: rotate(90deg) translateX(2px);
+            line-height: 25px;
+            font-size: 16px;
+            float: right;
+            content: "\25ba";
+            }
+        }
+        
+        &.closed {
+            max-height: 34px;
+            transition: max-height 0.2s ease-out;
+            .headbar::before {
+                //content: '\02795';
+                line-height: 25px;
+                font-size: 16px;
+                transform: rotate(0deg);
+            }
+        }
+    }
+}
+
