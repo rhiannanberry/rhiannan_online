@@ -47,8 +47,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             }
             frontmatter {
               id,
-              customSlug,
-              projects
+              customSlug
             }
             fileAbsolutePath
           }
@@ -83,3 +82,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     
   })
 }
+
+/*
+
+{
+      allMarkdownRemark(
+       
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            fields {
+              isProject,
+              slug
+            }
+            frontmatter {
+              id,
+              customSlug,
+              projects
+            }
+            fileAbsolutePath
+          }
+        }
+      }
+    }
+    */
