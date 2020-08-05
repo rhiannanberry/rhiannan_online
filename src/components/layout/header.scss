@@ -151,33 +151,3 @@ header {
         
     }
 }
-
-
-/*
-@media only screen and (max-width: 600px) {
-    header {
-        transition: max-width 0.2s ease-out;
-        padding: 0 10px;
-        max-width: 100%;
-        #title {
-            letter-spacing: .1em;
-        }
-        .links {
-            margin-bottom: 9px;
-            margin-left: 0px;
-            align-items: flex-end;
-            margin-right: 6px;
-            .link {
-                line-height: 20px;
-                font-size: 20px;
-            }
-        }
-
-        .col {
-            //flex-direction: column;
-            :nth-child(2) {
-                display:none;
-            }
-        }
-    }
-} */
